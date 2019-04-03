@@ -1,6 +1,7 @@
 package com.galveston.security;
 
 import com.galveston.entities.User;
+import com.galveston.error.GenericException;
 import com.galveston.objectFactory.RunTimeObjectHolder;
 import javafx.scene.control.Tab;
 
@@ -24,9 +25,14 @@ public class ApprovalImpl implements Approval{
     }
 
     @Override
-    public String nameAndPoint(Long id) {
-        User user = RunTimeObjectHolder.getInstance().users.get(SessionHolder.getSession().userId);
-        return "Hi " + user.getFirstName() + ", YouGot " + user.getPoints() + "pts";
+    public String nameAndPoint(Long id) throws GenericException {
+        try {
+            User user = RunTimeObjectHolder.getInstance().users.get(SessionHolder.getSession().userId);
+            return "Hi " + user.getFirstName() + ", YouGot " + user.getPoints() + "pts";
+        }catch (Exception e){
+            throw new GenericException("Somthing went wrong please contact adminstration.");
+        }
+
     }
 
     @Override

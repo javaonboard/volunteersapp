@@ -2,10 +2,13 @@ package com.galveston;
 
 import com.galveston.controller.UserController;
 import com.galveston.dao.Login;
+import com.galveston.error.GenericException;
 import com.galveston.security.SessionHolder;
 import com.galveston.util.Checker;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+
+import java.io.IOException;
 
 
 public class MainController extends Checker {
@@ -56,6 +59,9 @@ public class MainController extends Checker {
     Button logout;
     @FXML
     Label Hello;
+    @FXML
+    TabPane mainTab;
+
 
 
     @FXML
@@ -70,13 +76,14 @@ public class MainController extends Checker {
     }
 
     @FXML
-    public void login(){
+    public void login() throws GenericException {
         if(SessionHolder.getSession().session)loginLabel.setText("Please First logout!");
         else {
             Login login = new Login();
             if (!login.userAuthentication(loginUser.getText(), loginPass.getText()))
                 loginLabel.setText("Invalid User or Password!");
             else {
+                infoAlert("SignIn","Welcome "+whoIsIt(SessionHolder.getSession().userId).getFirstName());
                 setNull(loginPass,loginUser);
                 unlockTab(rewardTab,eventTab);
                 Hello.setText(nameAndPoint(SessionHolder.getSession().userId));
@@ -103,6 +110,14 @@ public class MainController extends Checker {
     @FXML
     public void closeWindow(){
         System.exit(0);
+    }
+
+    private void infoAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
 }

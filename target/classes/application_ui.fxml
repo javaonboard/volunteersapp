@@ -12,6 +12,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
@@ -28,7 +29,10 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="Hello" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="179.0" textFill="#a000b9" />
+            <Label fx:id="Hello" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="179.0" textFill="#a000b9">
+               <tooltip>
+                  <Tooltip fx:id="status" text="Empty Tooltip" />
+               </tooltip></Label>
             <Button fx:id="logout" disable="true" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="64.0" style="-fx-background-radius: 50; -fx-background-color: #920cff;" text="Logout" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -68,7 +72,7 @@
       </ToolBar>
    </bottom>
    <center>
-      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+      <TabPane fx:id="mainTab" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
           <Tab text="Main">
             <content>
@@ -178,7 +182,7 @@
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                </content>
             </Tab>
-            <Tab fx:id="volunteerTab" disable="true" text="Volunteers">
+            <Tab fx:id="volunteerTab" disable="true" text="Adminstration">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
               </content>
