@@ -49,6 +49,7 @@ public class User extends Checker {
         this.zipCode = zip;
         this.phoneNumber = phone;
         this.email = email;
+        this.points = 0L;
         this.events = new ArrayList<>();
         this.rewards = new ArrayList<>();
     }

@@ -8,6 +8,7 @@ public interface Approval {
     boolean isOnline();
     String whatRole();
     User whoIsIt(Long id);
+    String nameAndPoint(Long id);
     void lockTab(Tab... tabs);
     void unlockTab(Tab... tabs);
 }

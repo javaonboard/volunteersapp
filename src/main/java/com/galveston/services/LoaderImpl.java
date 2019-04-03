@@ -5,6 +5,7 @@ import com.galveston.objectFactory.RunTimeObjectHolder;
 import com.google.gson.stream.JsonReader;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -14,9 +15,12 @@ import java.util.List;
 public class LoaderImpl implements Loader{
 
 
+    //This method Responsible to Read the json file and parse the data as a json object and map it to Java Object.
     @Override
     public void userFireUpTimeLoader() throws IOException {
         List<User> users = new ArrayList<>();
+        File file = new File("userDB.json");
+        if(!file.exists())file.createNewFile();
         FileReader fr = new FileReader("userDB.json");
         if(!isEmpty(fr)) {
             JsonReader jsonReader = new JsonReader(new FileReader("userDB.json"));
@@ -27,46 +31,44 @@ public class LoaderImpl implements Loader{
                 User user = new User();
                 jsonReader.beginObject();
                 jsonReader.nextName();
-                user.setUserId(jsonReader.nextLong());
+                    user.setUserId(jsonReader.nextLong());
                 jsonReader.nextName();
-                user.setFirstName(jsonReader.nextString());
+                    user.setFirstName(jsonReader.nextString());
                 jsonReader.nextName();
-                user.setMiddleName(jsonReader.nextString());
+                    user.setMiddleName(jsonReader.nextString());
                 jsonReader.nextName();
-                user.setLastName(jsonReader.nextString());
+                    user.setLastName(jsonReader.nextString());
                 jsonReader.nextName();
-                user.setUserName(jsonReader.nextString());
+                    user.setUserName(jsonReader.nextString());
                 jsonReader.nextName();
-                user.setPassword(jsonReader.nextString());
+                    user.setPassword(jsonReader.nextString());
                 jsonReader.nextName();
-                user.setCPassword(jsonReader.nextString());
+                    user.setCPassword(jsonReader.nextString());
                 jsonReader.nextName();
-                user.setAddress(jsonReader.nextString());
+                    user.setAddress(jsonReader.nextString());
                 jsonReader.nextName();
-                user.setCity(jsonReader.nextString());
+                    user.setCity(jsonReader.nextString());
                 jsonReader.nextName();
-                user.setState(jsonReader.nextString());
+                    user.setState(jsonReader.nextString());
                 jsonReader.nextName();
-                user.setZipCode(jsonReader.nextString());
+                    user.setZipCode(jsonReader.nextString());
                 jsonReader.nextName();
-                user.setPhoneNumber(jsonReader.nextString());
+                    user.setPhoneNumber(jsonReader.nextString());
                 jsonReader.nextName();
-                user.setEmail(jsonReader.nextString());
+                    user.setEmail(jsonReader.nextString());
+                jsonReader.nextName();
+                    user.setPoints(jsonReader.nextLong());
                 jsonReader.nextName();
                 jsonReader.beginArray();
                 List<Long> events = new ArrayList<>();
-                while (jsonReader.hasNext()) {
-                    events.add(jsonReader.nextLong());
-                }
-                user.setEvents(events);
+                while (jsonReader.hasNext()) events.add(jsonReader.nextLong());
+                    user.setEvents(events);
                 jsonReader.endArray();
                 jsonReader.nextName();
                 jsonReader.beginArray();
                 List<Long> rewards = new ArrayList<>();
-                while (jsonReader.hasNext()) {
-                    events.add(jsonReader.nextLong());
-                }
-                user.setRewards(rewards);
+                while (jsonReader.hasNext()) rewards.add(jsonReader.nextLong());
+                    user.setRewards(rewards);
                 jsonReader.endArray();
                 users.add(user);
                 jsonReader.endObject();

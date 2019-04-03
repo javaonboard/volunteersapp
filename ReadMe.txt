@@ -1,10 +1,15 @@
-JavaFX is no longer part of JDK 11 therefore please consider the below points.
-- please add below VM argument in your project configuration: 
-  '--module-path "C:\software\openjfx-11.0.2\javafx-sdk-11.0.2\lib" --add-modules=javafx.controls,javafx.fxml,javafx.graphics'
--please replace your javafx-sdk path of your local machine in the above argument.
+Execution options: JavaFX is no longer part of JDK 11 and it provided in standalone SDK therefore, please consider the below points.
+Fat Jar
+-Fat Jar File has been created volunteersapp-1.0-SNAPSHOT-jar-with-dependencies.jar
+please use this command in terminal at <Project>\target>$ java -jar volunteersapp-1.0-SNAPSHOT-jar-with-dependencies.jar
+In case: For recreate the Fat Jar <Project>$ mvn clean install
 
--this application is runnable with help of Maven please use below command to run it without above configuration:
-	mvn compile exec:java
+Maven
+-This application is runnable with help of Maven please use below command to run it.
+<Project>$ mvn clean compile exec:java
+
+
+
 
 	
 

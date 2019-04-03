@@ -24,6 +24,12 @@ public class ApprovalImpl implements Approval{
     }
 
     @Override
+    public String nameAndPoint(Long id) {
+        User user = RunTimeObjectHolder.getInstance().users.get(SessionHolder.getSession().userId);
+        return "Hi " + user.getFirstName() + ", YouGot " + user.getPoints() + "pts";
+    }
+
+    @Override
     public void lockTab(Tab...tabs) {
         for(Tab t : tabs)t.setDisable(true);
     }
@@ -32,5 +38,4 @@ public class ApprovalImpl implements Approval{
     public void unlockTab(Tab...tabs) {
         for(Tab t : tabs)t.setDisable(false);
     }
-
 }

@@ -22,41 +22,21 @@ public class Main extends Application implements RunTimeObjectLoader {
     @Override
     public void start(Stage primaryStage) throws Exception{
         //Adding the Address of fxml file.
-        URL url = new File("src/main/java/com/galveston/sample.fxml").toURL();
-        //FXMLLoader fxmlLoader = FXMLLoader.load(url);
-        //fxmlLoader.setController();
-        Parent root = FXMLLoader.load(url);
-        //Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        //primaryStage.setTitle("Hello World");
-
-        //Remove windows default toolbar
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/application_ui.fxml"));
+        Parent root = loader.load();
+        //URL url = new File("src/main/resources/application_ui.fxml").toURL();
+        //Parent root = FXMLLoader.load(url);
         primaryStage.initStyle(StageStyle.TRANSPARENT);
-        //Movable window
-        root.setOnMousePressed(event -> {
-            xOffset = event.getSceneX();
-            yOffset = event.getSceneY();
-        });
-        //move around here
-        root.setOnMouseDragged(event -> {
-            primaryStage.setX(event.getScreenX() - xOffset);
-            primaryStage.setY(event.getScreenY() - yOffset);
-        });
-
-
-        primaryStage.setScene(new Scene(root));
-
-
+        primaryStage.setScene(new Scene(root,750,500));
         primaryStage.show();
         // Load the Object In ruTime Memory from Files
         fireUp();
-
     }
-
 
     public static void main(String[] args) {
         launch(args);
     }
-
 
     @Override
     public void fireUp() {

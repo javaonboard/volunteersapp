@@ -54,6 +54,8 @@ public class MainController extends Checker {
     Tab volunteerTab;
     @FXML
     Button logout;
+    @FXML
+    Label Hello;
 
 
     @FXML
@@ -73,11 +75,12 @@ public class MainController extends Checker {
         else {
             Login login = new Login();
             if (!login.userAuthentication(loginUser.getText(), loginPass.getText()))
-                loginLabel.setText("Invalid User&Password!");
+                loginLabel.setText("Invalid User or Password!");
             else {
-
                 setNull(loginPass,loginUser);
                 unlockTab(rewardTab,eventTab);
+                Hello.setText(nameAndPoint(SessionHolder.getSession().userId));
+                loginLabel.setText(null);createOutPut.setText(null);
                 logout.setDisable(false);
                 eventTab.getTabPane().getSelectionModel().selectNext();
             }
@@ -86,11 +89,12 @@ public class MainController extends Checker {
 
     @FXML
     public void logout(){
+        loginLabel.setText(null);createOutPut.setText(null);
         if(isOnline()){
             kicOut();
             lockTab(rewardTab,eventTab,volunteerTab);
             eventTab.getTabPane().getSelectionModel().selectFirst();
-            logout.setDisable(true);
+            logout.setDisable(true);Hello.setText(null);
         }
 
 

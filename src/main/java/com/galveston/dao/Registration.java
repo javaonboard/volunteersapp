@@ -7,6 +7,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -21,7 +22,7 @@ public class Registration {
         JSONObject obj = new JSONObject();
         JSONArray jsonArray = new JSONArray();
         for(User u:users){
-            JSONObject obj1 = new JSONObject();
+            Map obj1 = new LinkedHashMap();
             obj1.put("userId",u.getUserId());
             obj1.put("firstName",u.getFirstName());
             obj1.put("middleName",u.getMiddleName());
@@ -43,7 +44,7 @@ public class Registration {
 
         obj.put("users",jsonArray);
 
-        System.out.println(obj.toJSONString());
+        //System.out.println(obj.toJSONString());
 
         try (FileWriter file = new FileWriter("userDB.json",false)) {
             file.write(obj.toJSONString());
