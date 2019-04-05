@@ -1,68 +1,59 @@
 package com.galveston;
 
+import com.galveston.controller.AdminController;
+import com.galveston.controller.EventController;
 import com.galveston.controller.UserController;
 import com.galveston.dao.Login;
+import com.galveston.entities.Event;
+import com.galveston.entities.VolunteerRequest;
 import com.galveston.error.GenericException;
 import com.galveston.security.SessionHolder;
+import com.galveston.util.Alert;
 import com.galveston.util.Checker;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-import java.io.IOException;
 
+public class MainController extends Checker{
 
-public class MainController extends Checker {
+    @FXML TextField fName;
+    @FXML TextField mName;
+    @FXML TextField lName;
+    @FXML TextField user;
+    @FXML TextField pass;
+    @FXML TextField cPass;
+    @FXML TextField address;
+    @FXML TextField city;
+    @FXML TextField state;
+    @FXML TextField zip;
+    @FXML TextField phone;
+    @FXML TextField email;
+    @FXML Button create;
+    @FXML Label createOutPut;
+    @FXML Label successOutPut;
+    @FXML TextField loginUser;
+    @FXML TextField loginPass;
+    @FXML Label loginLabel;
+    @FXML Tab eventTab;
+    @FXML Tab rewardTab;
+    @FXML Button logout;
+    @FXML Label Hello;
+    @FXML TabPane mainTab;
+    @FXML TableView<Event> evTableView;
+    @FXML TableColumn<Event, Long> evTableId;
+    @FXML TableColumn<Event, String> evTableCategory;
+    @FXML TableColumn<Event, String> evTableName;
+    @FXML TableColumn<Event, String> evTableLevel;
+    @FXML TableColumn<Event, Integer> evTablePoint;
+    @FXML TableColumn<Event, String> evTableDate;
+    @FXML TableColumn<Event, String> evTableTime;
+    @FXML TableColumn evAction;
 
-    @FXML
-    TextField fName;
-    @FXML
-    TextField mName;
-    @FXML
-    TextField lName;
-    @FXML
-    TextField user;
-    @FXML
-    TextField pass;
-    @FXML
-    TextField cPass;
-    @FXML
-    TextField address;
-    @FXML
-    TextField city;
-    @FXML
-    TextField state;
-    @FXML
-    TextField zip;
-    @FXML
-    TextField phone;
-    @FXML
-    TextField email;
-    @FXML
-    Button create;
-    @FXML
-    Label createOutPut;
-    @FXML
-    Label successOutPut;
-    @FXML
-    TextField loginUser;
-    @FXML
-    TextField loginPass;
-    @FXML
-    Label loginLabel;
-    @FXML
-    Tab eventTab;
-    @FXML
-    Tab rewardTab;
-    @FXML
-    Tab volunteerTab;
-    @FXML
-    Button logout;
-    @FXML
-    Label Hello;
-    @FXML
-    TabPane mainTab;
-
-
+    @FXML Tab adminTab;
+    @FXML TableView<VolunteerRequest> adminTable;
+    @FXML TableColumn<VolunteerRequest,String> adminEvents;
+    @FXML TableColumn<VolunteerRequest,String> adminVolunteers;
+    @FXML TableColumn adminAction;
 
     @FXML
     public void createUser(){
@@ -72,7 +63,8 @@ public class MainController extends Checker {
         if(!response.equals("You are all set."))createOutPut.setText(response);
         else{
             setNull(fName,mName,lName,user,pass,cPass,address,city,state,zip,phone,email);
-            successOutPut.setText(response);}
+            successOutPut.setText(response);
+        }
     }
 
     @FXML
@@ -83,23 +75,31 @@ public class MainController extends Checker {
             if (!login.userAuthentication(loginUser.getText(), loginPass.getText()))
                 loginLabel.setText("Invalid User or Password!");
             else {
-                infoAlert("SignIn","Welcome "+whoIsIt(SessionHolder.getSession().userId).getFirstName());
+                Alert.infoAlert("SignIn","Welcome "+whoIsIt(SessionHolder.getSession().userId).getFirstName()+", "+ whoIsIt(SessionHolder.getSession().userId).getLastName());
                 setNull(loginPass,loginUser);
-                unlockTab(rewardTab,eventTab);
                 Hello.setText(nameAndPoint(SessionHolder.getSession().userId));
                 loginLabel.setText(null);createOutPut.setText(null);
                 logout.setDisable(false);
-                eventTab.getTabPane().getSelectionModel().selectNext();
+
+                if(SessionHolder.getSession().role.equals("admin")){
+                    unlockTab(adminTab);
+                    AdminController.adminController(adminTable,adminEvents,adminVolunteers,adminAction);
+
+                }else {
+                    unlockTab(rewardTab, eventTab);
+                    eventTab.getTabPane().getSelectionModel().selectNext();
+                    EventController.eventViewController(evTableView, evTableId, evTableCategory, evTableName, evTableLevel, evTablePoint, evTableDate, evTableTime, evAction);
+                }
             }
         }
     }
 
     @FXML
     public void logout(){
-        loginLabel.setText(null);createOutPut.setText(null);
+        loginLabel.setText(null);createOutPut.setText(null);successOutPut.setText(null);
         if(isOnline()){
             kicOut();
-            lockTab(rewardTab,eventTab,volunteerTab);
+            lockTab(rewardTab,eventTab,adminTab);
             eventTab.getTabPane().getSelectionModel().selectFirst();
             logout.setDisable(true);Hello.setText(null);
         }
@@ -112,12 +112,6 @@ public class MainController extends Checker {
         System.exit(0);
     }
 
-    private void infoAlert(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
+
 
 }

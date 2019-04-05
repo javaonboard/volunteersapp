@@ -28,11 +28,10 @@ public class User extends Checker {
     private String zipCode;
     private String phoneNumber;
     private String email;
-
     private Long points;
-
-    private List<Long> events;
-    private List<Long> rewards;
+    private List<Event> events = new ArrayList<>();
+    private List<Reward> rewards = new ArrayList<>();
+    private boolean isAdmin;
 
     public User(String fName,String mName,String lName,String user,String pass,String cPass,String address,String city,String state,String zip,String phone,String email){
 
@@ -52,7 +51,18 @@ public class User extends Checker {
         this.points = 0L;
         this.events = new ArrayList<>();
         this.rewards = new ArrayList<>();
+        this.isAdmin = false;
     }
 
+    public void setEvent(Event e){
+        //RunTimeObjectHolder.getInstance().events.values().stream().forEach(System.out::println);
+       // Event ev = new Event(e.getEventId(),e.getCategory(),e.getName(),temp.getLevel(),temp.getPoint(),temp.getDate(),temp.getTime(),false);
+        events.add(e);
+    }
+    // need to change to copy temp create new
+    public void setReward(Long rewardId){
+        if(events.isEmpty()|| events==null) rewards = new ArrayList<>();
+        rewards.add(RunTimeObjectHolder.getInstance().rewards.get(rewardId));
+    }
 
 }

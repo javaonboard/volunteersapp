@@ -9,10 +9,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
-import java.io.File;
 import java.io.IOException;
-import java.net.URL;
+
 
 public class Main extends Application implements RunTimeObjectLoader {
 
@@ -43,8 +41,10 @@ public class Main extends Application implements RunTimeObjectLoader {
         RunTimeObjectHolder.getInstance();
         LoaderImpl li = new LoaderImpl();
         try {
+            li.eventsFireUpTimeLoader();
             li.userFireUpTimeLoader();
-        } catch (IOException e) {
+            li.whoIsBoss();
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

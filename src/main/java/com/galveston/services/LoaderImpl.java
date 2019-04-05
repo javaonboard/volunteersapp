@@ -1,7 +1,10 @@
 package com.galveston.services;
 
+import com.galveston.dao.Registration;
+import com.galveston.entities.Event;
 import com.galveston.entities.User;
 import com.galveston.objectFactory.RunTimeObjectHolder;
+import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
 import java.io.BufferedReader;
@@ -13,6 +16,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LoaderImpl implements Loader{
+
+
+    @Override
+    public void eventsFireUpTimeLoader() {
+        //Adding Initial Events in Running Time.
+        Event ev1 = new Event(1001L, "Music", "Lady GAGA", "Silver", 10, "04/10/2019","10-14",false);
+        Event ev2 = new Event(1002L, "Sport", "Football", "Gold", 15, "05/13/2019","14-18",false);
+        Event ev3 = new Event(1003L, "Art", "Painting", "Bronze", 5, "04/21/2019","06-10",false);
+        Event ev4 = new Event(1004L, "Technology", "Artificial Intelligence", "Silver", 10, "06/08/2019","10-16",false);
+        Event ev5 = new Event(1005L, "Cars", "American muscle", "Gold", 15, "05/18/2019","14-18",false);
+        RunTimeObjectHolder.getInstance().events.put(ev1.getEventId(),ev1);
+        RunTimeObjectHolder.getInstance().events.put(ev2.getEventId(),ev2);
+        RunTimeObjectHolder.getInstance().events.put(ev3.getEventId(),ev3);
+        RunTimeObjectHolder.getInstance().events.put(ev4.getEventId(),ev4);
+        RunTimeObjectHolder.getInstance().events.put(ev5.getEventId(),ev5);
+    }
 
 
     //This method Responsible to Read the json file and parse the data as a json object and map it to Java Object.
@@ -60,16 +79,42 @@ public class LoaderImpl implements Loader{
                     user.setPoints(jsonReader.nextLong());
                 jsonReader.nextName();
                 jsonReader.beginArray();
-                List<Long> events = new ArrayList<>();
-                while (jsonReader.hasNext()) events.add(jsonReader.nextLong());
-                    user.setEvents(events);
+                List<Event> events = new ArrayList<>();
+                while (jsonReader.hasNext()){
+                    Event event = new Event();
+                    jsonReader.beginObject();
+                    jsonReader.nextName();
+                        event.setEventId(jsonReader.nextLong());
+                    jsonReader.nextName();
+                        event.setCategory(jsonReader.nextString());
+                    jsonReader.nextName();
+                        event.setName(jsonReader.nextString());
+                    jsonReader.nextName();
+                        event.setLevel(jsonReader.nextString());
+                    jsonReader.nextName();
+                        event.setPoint(jsonReader.nextInt());
+                    jsonReader.nextName();
+                        event.setDate(jsonReader.nextString());
+                    jsonReader.nextName();
+                        event.setTime(jsonReader.nextString());
+                    jsonReader.nextName();
+                        event.setConfirmed(jsonReader.nextBoolean());
+                        events.add(event);
+                    jsonReader.endObject();
+
+                }
+                //need to change to object
+                events.stream().forEach(e->user.setEvent(e));
                 jsonReader.endArray();
                 jsonReader.nextName();
                 jsonReader.beginArray();
                 List<Long> rewards = new ArrayList<>();
+                //need to change from id to object.
                 while (jsonReader.hasNext()) rewards.add(jsonReader.nextLong());
-                    user.setRewards(rewards);
+                    rewards.stream().forEach(r->user.setReward(r));
                 jsonReader.endArray();
+                jsonReader.nextName();
+                user.setAdmin(jsonReader.nextBoolean());
                 users.add(user);
                 jsonReader.endObject();
 
@@ -81,6 +126,15 @@ public class LoaderImpl implements Loader{
         }
     }
 
+    @Override
+    public void whoIsBoss(){
+        User admin = new User("Dear","Boss","Boss","admin","password","password","Global",
+                "world","world","12345","0000000000","admin@admin.com");
+        admin.setAdmin(true);
+        Registration.persistUserInFileAndMemory(admin);
+    }
+
+
     boolean isEmpty(FileReader fr) throws IOException {
         BufferedReader br = new BufferedReader(fr);
         if (br.readLine() == null) {
@@ -88,4 +142,5 @@ public class LoaderImpl implements Loader{
         }
         return false;
     }
+
 }

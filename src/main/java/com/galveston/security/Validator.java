@@ -5,34 +5,21 @@ import com.galveston.objectFactory.RunTimeObjectHolder;
 
 import java.util.Map;
 
-public class Validator extends ApprovalImpl {
-
-    private boolean auth = false;
-    private String role = "volunteer";
-    private Long userId= null;
+public class Validator extends DetectiveImpl {
 
     public boolean userAuthentication(final String user, final String password){
 
-        if(user.toLowerCase().equals("admin")&&password.equals("password")){
-            auth = true;
-            role = "admin";
-        }else {
             for (Map.Entry<Long, User> map : RunTimeObjectHolder.getInstance().users.entrySet()) {
                 if (map.getValue().getUserName().equals(user) || map.getValue().getEmail().equals(user)) {
                     if (map.getValue().getPassword().equals(password)) {
-                        auth = true;
-                        userId = map.getKey();
-                        break;
+                        SessionHolder.getSession().session = true;
+                        SessionHolder.getSession().userId = map.getValue().getUserId();
+                        SessionHolder.getSession().role = map.getValue().isAdmin()? "admin" : "volunteer";
                     }
                 }
             }
-        }
-        if(auth==true){
-            SessionHolder.getSession().session = true;
-            SessionHolder.getSession().userId = userId;
-            SessionHolder.getSession().role = role;
-        }
-        return auth;
+
+        return SessionHolder.getSession().session;
     }
 
 

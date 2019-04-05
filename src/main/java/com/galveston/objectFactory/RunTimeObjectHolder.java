@@ -18,35 +18,18 @@ public class RunTimeObjectHolder extends LoaderImpl {
     private static RunTimeObjectHolder singleton_instance = null;
 
     public Map<Long, User> users;
-    public List<Event> events;
-    public List<Reward> rewards;
+    public Map<Long, Event> events;
+    public Map<Long, Reward> rewards;
 
     private RunTimeObjectHolder(){
         users = new HashMap<>();
-        events = new ArrayList<>();
-        rewards = new ArrayList<>();
+        events = new HashMap<>();
+        rewards = new HashMap<>();
     }
 
     public static RunTimeObjectHolder getInstance(){
         if(singleton_instance == null) singleton_instance = new RunTimeObjectHolder();
         return singleton_instance;
-    }
-
-
-    private void setEvents(Event event){
-        events.add(event);
-    }
-    private void setRewards(Reward reward){
-        rewards.add(reward);
-    }
-    public Map<?,?> getAllUser(){
-        return users;
-    }
-    private List<?> getAllEvents(){
-        return events;
-    }
-    private List<?> getAllRewards(){
-        return rewards;
     }
 
     public Long getLastID(){
