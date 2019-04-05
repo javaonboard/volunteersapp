@@ -24,4 +24,5 @@ com\galveston\services\LoaderImpl.class
 com\galveston\controller\UserController.class
 com\galveston\Main.class
 com\galveston\objectFactory\RunTimeObjectHolder.class
+com\galveston\util\Role.class
 com\galveston\services\Loader.class
