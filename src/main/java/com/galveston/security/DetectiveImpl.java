@@ -27,10 +27,13 @@ public class DetectiveImpl implements Detective {
     @Override
     public String nameAndPoint(Long id) throws GenericException {
         try {
+            if(SessionHolder.getSession().role.equals("admin")){
+                return "Hi Admin!";
+            }
             User user = RunTimeObjectHolder.getInstance().users.get(SessionHolder.getSession().userId);
             return "Hi " + user.getFirstName() + ", YouGot " + user.getPoints() + "pts";
         }catch (Exception e){
-            throw new GenericException("Something went wrong please contact adminstration.");
+            throw new GenericException("Something went wrong please contact administration.");
         }
 
     }

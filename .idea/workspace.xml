@@ -1,45 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="A">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/galveston/entities/VolunteerRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/volunteersapp.kotlin_module" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Login Updated, Registration Updated, Events added, Administration functionality added.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/galveston/util/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/galveston/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/galveston/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/galveston/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/galveston/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/galveston/controller/eventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/galveston/controller/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/galveston/dao/Logout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/galveston/dao/Logout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/galveston/dao/Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/galveston/dao/Registration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/galveston/entities/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/galveston/entities/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/galveston/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/galveston/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/galveston/objectFactory/RunTimeObjectHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/galveston/objectFactory/RunTimeObjectHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/galveston/repository/userRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/galveston/repository/UserRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/galveston/security/Approval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/galveston/security/Detective.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/galveston/security/ApprovalImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/galveston/security/DetectiveImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/galveston/security/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/galveston/security/Validator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/galveston/services/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/galveston/services/Loader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/galveston/services/LoaderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/galveston/services/LoaderImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/galveston/util/Checker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/galveston/util/Checker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/galveston/security/DetectiveImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/galveston/security/DetectiveImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application_ui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application_ui.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/userDB.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application_ui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application_ui.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/galveston/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/galveston/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/galveston/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/galveston/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/galveston/controller/eventController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/galveston/controller/eventController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/galveston/dao/Logout.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/galveston/dao/Logout.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/galveston/dao/Registration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/galveston/dao/Registration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/galveston/entities/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/galveston/entities/Event.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/galveston/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/galveston/entities/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/galveston/objectFactory/RunTimeObjectHolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/galveston/objectFactory/RunTimeObjectHolder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/galveston/repository/userRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/galveston/repository/userRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/galveston/security/Approval.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/galveston/security/ApprovalImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/galveston/security/Validator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/galveston/security/Validator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/galveston/services/Loader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/galveston/services/Loader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/galveston/services/LoaderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/galveston/services/LoaderImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/galveston/util/Checker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/galveston/util/Checker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/userDB.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/galveston/security/DetectiveImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/galveston/security/DetectiveImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userDB.json" beforeDir="false" afterPath="$PROJECT_DIR$/userDB.json" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -102,13 +74,36 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/galveston/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1115#1116#0" expanded="true" />
+                <element signature="e#1143#1144#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/galveston/security/DetectiveImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+            <state relative-caret-position="306">
+              <caret line="35" column="82" selection-start-line="35" selection-start-column="82" selection-end-line="35" selection-end-column="82" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/galveston/util/Role.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -122,11 +117,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/galveston/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
-              <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+            <state relative-caret-position="258">
+              <caret line="85" column="41" selection-start-line="85" selection-start-column="41" selection-end-line="85" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application_ui.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="32" column="30" lean-forward="true" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -136,39 +144,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
               <caret line="20" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/galveston/entities/Reward.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/galveston/entities/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/galveston/entities/VolunteerRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -214,12 +189,14 @@
         <option value="AnnotationType" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>controller</find>
+      <find>status</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -261,7 +238,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/galveston/util/Checker.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/galveston/repository/userRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/galveston/services/Loader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/galveston/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/galveston/security/Validator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/galveston/dao/Registration.java" />
         <option value="$PROJECT_DIR$/userDB.json" />
@@ -271,7 +247,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/galveston/controller/AdminController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/galveston/controller/EventActionButton.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/galveston/entities/VolunteerRequest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/galveston/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/galveston/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/galveston/security/DetectiveImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/galveston/util/Role.java" />
       </list>
     </option>
   </component>
@@ -436,6 +415,11 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="volunteersapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="volunteersapp" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="volunteersapp" type="b2602c69:ProjectViewProjectNode" />
@@ -605,7 +589,7 @@
       <workItem from="1553999438265" duration="223000" />
       <workItem from="1553999745315" duration="59631000" />
       <workItem from="1554254904964" duration="16499000" />
-      <workItem from="1554360455174" duration="40186000" />
+      <workItem from="1554360455174" duration="46285000" />
     </task>
     <task id="LOCAL-00001" summary="updated. with fat jar configuration. meta-inf added. event tab updated. password hashed.">
       <created>1554305016694</created>
@@ -621,14 +605,21 @@
       <option name="project" value="LOCAL" />
       <updated>1554318675957</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Login Updated, Registration Updated, Events added, Administration functionality added.">
+      <created>1554444556414</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1554444556414</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132330000" />
+    <option name="totallyTimeSpent" value="138429000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.29954615" />
       <window_info id="Structure" order="1" weight="0.24962178" />
@@ -638,8 +629,8 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32962963" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.29761904" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3282313" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.48639455" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39795917" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -653,7 +644,7 @@
       <window_info anchor="bottom" id="Messages" order="13" weight="0.3265306" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="15" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="16" visible="true" weight="0.52040815" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="16" visible="true" weight="0.30442178" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -712,7 +703,8 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <MESSAGE value="updated. with fat jar configuration. meta-inf added. event tab updated. password hashed." />
     <MESSAGE value="updated." />
-    <option name="LAST_COMMIT_MESSAGE" value="updated." />
+    <MESSAGE value="Login Updated, Registration Updated, Events added, Administration functionality added." />
+    <option name="LAST_COMMIT_MESSAGE" value="Login Updated, Registration Updated, Events added, Administration functionality added." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -737,13 +729,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-base/11.0.2/javafx-base-11.0.2-win.jar!/javafx/event/Event.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar!/org/json/simple/JSONArray.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -856,14 +841,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application_ui.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
@@ -955,16 +932,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="89">
           <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/galveston/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1107,16 +1074,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/galveston/security/DetectiveImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/galveston/security/SessionHolder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1134,10 +1091,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/galveston/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1115#1116#0" expanded="true" />
+            <element signature="e#1143#1144#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application_ui.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="32" column="30" lean-forward="true" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/galveston/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+        <state relative-caret-position="258">
+          <caret line="85" column="41" selection-start-line="85" selection-start-column="41" selection-end-line="85" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/galveston/security/DetectiveImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="35" column="82" selection-start-line="35" selection-start-column="82" selection-end-line="35" selection-end-column="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/galveston/util/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>

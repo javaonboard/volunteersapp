@@ -9,13 +9,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import java.io.IOException;
 
 
+/**
+ * @implNote
+ * @version 0.0.1
+ */
 public class Main extends Application implements RunTimeObjectLoader {
 
-    private double xOffset = 0;
-    private double yOffset = 0;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -35,6 +36,13 @@ public class Main extends Application implements RunTimeObjectLoader {
     public static void main(String[] args) {
         launch(args);
     }
+
+    /**
+     * @implNote
+     * @param
+     * @return
+     * @exception
+     */
 
     @Override
     public void fireUp() {

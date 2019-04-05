@@ -37,8 +37,9 @@ public class MainController extends Checker{
     @FXML Tab eventTab;
     @FXML Tab rewardTab;
     @FXML Button logout;
-    @FXML Label Hello;
+    @FXML Label status;
     @FXML TabPane mainTab;
+
     @FXML TableView<Event> evTableView;
     @FXML TableColumn<Event, Long> evTableId;
     @FXML TableColumn<Event, String> evTableCategory;
@@ -77,15 +78,18 @@ public class MainController extends Checker{
             else {
                 Alert.infoAlert("SignIn","Welcome "+whoIsIt(SessionHolder.getSession().userId).getFirstName()+", "+ whoIsIt(SessionHolder.getSession().userId).getLastName());
                 setNull(loginPass,loginUser);
-                Hello.setText(nameAndPoint(SessionHolder.getSession().userId));
+
                 loginLabel.setText(null);createOutPut.setText(null);
                 logout.setDisable(false);
 
                 if(SessionHolder.getSession().role.equals("admin")){
+                    status.setText(nameAndPoint(SessionHolder.getSession().userId));
                     unlockTab(adminTab);
                     AdminController.adminController(adminTable,adminEvents,adminVolunteers,adminAction);
+                    adminTab.getTabPane().getSelectionModel().selectLast();
 
                 }else {
+                    status.setText(nameAndPoint(SessionHolder.getSession().userId));
                     unlockTab(rewardTab, eventTab);
                     eventTab.getTabPane().getSelectionModel().selectNext();
                     EventController.eventViewController(evTableView, evTableId, evTableCategory, evTableName, evTableLevel, evTablePoint, evTableDate, evTableTime, evAction);
@@ -101,7 +105,8 @@ public class MainController extends Checker{
             kicOut();
             lockTab(rewardTab,eventTab,adminTab);
             eventTab.getTabPane().getSelectionModel().selectFirst();
-            logout.setDisable(true);Hello.setText(null);
+            logout.setDisable(true);
+            status.setText(null);
         }
 
 
@@ -111,7 +116,6 @@ public class MainController extends Checker{
     public void closeWindow(){
         System.exit(0);
     }
-
 
 
 }
